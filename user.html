@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LetMeFix | My Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <a href="index.html">
+                    <h1 class="title">
+                        LetMeFix
+                    </h1>
+                </a>
+            </div>
+        </div>
+    </section>
+    <main class="section">
+        <div class="columns">
+            <div class="column is-one-fifth">
+                <aside class="menu">
+                    <p class="menu-label">
+                        Services
+                    </p>
+                    <ul class="menu-list">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="newService.html">New service</a></li>
+                    </ul>
+                    <p class="menu-label">
+                        Users
+                    </p>
+                    <ul class="menu-list">
+                        <li><a href="users.html?type=professional">Look for professionals</a></li>
+                    </ul>
+                    <p class="menu-label">
+                        Account
+                    </p>
+                    <ul class="menu-list">
+                        <li><a id="myDetails" href="">My details</a></li>
+                        <li><a onclick="logout()">Logout</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="column">
+                <div class="box">
+                    <h1 class="title" id="username"></h1>
+                    <div class="control">
+                        <div class="tags has-addons is-unselectable is-hidden" name="professionalInfo">
+                            <span class="tag is-dark">Professional</span>
+                            <span class="tag is-info">
+                                <i class="fas fa-toolbox"></i>
+                            </span>
+                        </div>
+                        <div class="tags has-addons is-unselectable is-hidden" name="companyInfo">
+                            <span class="tag is-dark">Company</span>
+                            <span class="tag is-success">
+                                <i class="fas fa-building"></i>
+                            </span>
+                        </div>
+                        <div class="tags has-addons is-unselectable is-hidden" name="customerInfo">
+                            <span class="tag is-dark">Customer</span>
+                            <span class="tag is-warning">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Full name</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control is-expanded has-icons-left">
+                                    <input class="input" type="text" id="fullName" placeholder="Full name">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Address</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control is-expanded has-icons-left">
+                                    <input class="input" type="text" placeholder="Address" id="address">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-home"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Phone no.</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control is-expanded has-icons-left">
+                                    <input class="input" type="text" placeholder="Phone number" id="phoneNumber">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-phone"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div name="professionalInfo" class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Specialty</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control is-expanded has-icons-left">
+                                    <input class="input" type="text" placeholder="Specialty" id="specialty">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-toolbox"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div name="professionalInfo" class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Price/hour</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control is-expanded has-icons-left">
+                                    <input class="input" type="text" placeholder="Price per hour" id="pricePerHour">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-euro-sign"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div name="companyInfo" class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Industry</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control is-expanded has-icons-left">
+                                    <input class="input" type="text" placeholder="Industry" id="industry">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-industry"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a name="professionalInfo" id="directHire" class="button is-success is-hidden" href="">
+                        <span class="icon is-small">
+                            <i class="fas fa-money-bill"></i>
+                        </span>
+                        <span>Direct hire me!</span>
+                    </a>
+
+                </div>
+            </div>
+            <div class="column">
+                <div name="customerInfo" class="is-hidden">
+                    <div class="box">
+                        <h2 class="title is-4">Service confirmation</h2>
+                    </div>
+                    <div class="box">
+                        <h5 class="title is-5">Montagem de um lustre</h5>
+                        <a class="button is-success" name="confirmButton">
+                            <span class="icon is-small">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <span>Confirm start</span>
+                        </a>
+                    </div>
+                    <div class="box">
+                        <h5 class="title is-5">Pavimentação de quintal</h5>
+                        <a class="button is-danger" name="confirmButton">
+                            <span class="icon is-small">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <span>Confirm end</span>
+                        </a>
+                    </div>
+                    <div class="box">
+                        <h5 class="title is-5">Limpeza de cano entupido</h5>
+                        <a class="button is-success" name="confirmButton">
+                            <span class="icon is-small">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <span>Confirm start</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <script src="js/user.js"></script>
+</body>
+
+</html>

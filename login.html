@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LetMeFix | Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '2175152529220672',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v3.3'
+      });
+    };
+  </script>
+  <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+</head>
+
+<body>
+  <section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <a href="index.html">
+          <h1 class="title">
+            LetMeFix
+          </h1>
+        </a>
+      </div>
+    </div>
+  </section>
+  <main class="section">
+    <div class="columns">
+      <div class="column"></div>
+      <div class="column is-two-fifths">
+        <div id="loginErrorMessage" class="notification is-danger is-hidden">
+          Erro no login, tente novamente.
+        </div>
+        <div class="box">
+          <h1 class="title">Login</h1>
+          <form id="loginForm" method="POST">
+            <div class="field">
+              <p class="control has-icons-left has-icons-right">
+                <input class="input" type="text" name="username" id='username' placeholder="Username">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control has-icons-left has-icons-right">
+                <input class="input" type="password" placeholder="Password">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field is-right">
+              <p class="control">
+                <input type="submit" class="button is-success" value="Login">
+              </p>
+            </div>
+          </form>
+          <a href="register.html">New here? Create account</a>
+        </div>
+      </div>
+      <div class="column"></div>
+    </div>
+    </div>
+  </main>
+  <script src="js/login.js"></script>
+</body>
+
+</html>

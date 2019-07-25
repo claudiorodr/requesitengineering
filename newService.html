@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LetMeFix | New service</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/logout.js"></script>
+</head>
+
+<body>
+  <section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <a href="index.html">
+          <h1 class="title">
+            LetMeFix
+          </h1>
+        </a>
+      </div>
+    </div>
+  </section>
+  <main class="section">
+    <div class="columns">
+      <div class="column">
+        <aside class="menu">
+          <p class="menu-label">
+            Services
+          </p>
+          <ul class="menu-list">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="newService.html">New service</a></li>
+          </ul>
+          <p class="menu-label">
+            Users
+          </p>
+          <ul class="menu-list">
+            <li><a href="users.html?type=professional">Look for professionals</a></li>
+          </ul>
+          <p class="menu-label">
+            Account
+          </p>
+          <ul class="menu-list">
+            <li><a id="myDetails" href="">My details</a></li>
+            <li><a onclick="logout()">Logout</a></li>
+          </ul>
+        </aside>
+      </div>
+      <div class="column is-two-fifths">
+        <div id="newServiceErrorMessage" class="notification is-danger is-hidden">
+          Erro no registo, tente novamente.
+        </div>
+        <div class="box">
+          <h1 class="title">Create new service</h1>
+          <form id="newServiceForm" method="POST">
+            <div class="field">
+              <p class="control has-icons-left has-icons-right">
+                <input class="input" type="text" name="description" placeholder="Description">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-clipboard-list"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control has-icons-left has-icons-right">
+                <input class="input" type="text" name="address" placeholder="Address">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-home"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control has-icons-left has-icons-right">
+                <input class="input" type="date" name="finalDate" placeholder="Final date">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-calendar"></i>
+                </span>
+              </p>
+            </div>
+            <div class="field">
+              <p class="control has-icons-left">
+                <span class="select">
+                  <select name="type">
+                    <option value="electrician">Electrician</option>
+                    <option value="plumber">Plumber</option>
+                    <option value="builder">Builder</option>
+                    <option value="carpenter">Carpenter</option>
+                  </select>
+                </span>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-briefcase"></i>
+                </span>
+              </p>
+            </div>
+            <div class="file">
+              <label class="file-label">
+                <input type="hidden" id="photo" name="photo" value="josh" />
+                <input class="file-input" type="file" id="fileUpload">
+                <span class="file-cta">
+                  <span class="file-icon">
+                    <i class="fas fa-upload"></i>
+                  </span>
+                  <span class="file-label">
+                    Choose a file…
+                  </span>
+                </span>
+              </label>
+            </div>
+            <input type="hidden" value="" name="userId" />
+            <br/>
+            <!-- Submit button -->
+            <div class="field is-right">
+              <p class="control">
+                <input type="submit" class="button is-success" value="Create">
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="column"></div>
+    </div>
+  </main>
+  <script src="js/newService.js"></script>
+</body>
+
+</html>

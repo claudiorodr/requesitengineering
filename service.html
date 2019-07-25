@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LetMeFix | Service</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="js/auth.js"></script>
+</head>
+
+<body>
+  <section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <a href="index.html">
+          <h1 class="title">
+            LetMeFix
+          </h1>
+        </a>
+      </div>
+    </div>
+  </section>
+  <main class="section">
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <aside class="menu">
+          <p class="menu-label">
+            Services
+          </p>
+          <ul class="menu-list">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="newService.html">New service</a></li>
+          </ul>
+          <p class="menu-label">
+            Users
+          </p>
+          <ul class="menu-list">
+            <li><a href="users.html?type=professional">Look for professionals</a></li>
+          </ul>
+          <p class="menu-label">
+            Account
+          </p>
+          <ul class="menu-list">
+            <li><a id="myDetails" href="">My details</a></li>
+            <li><a onclick="logout()">Logout</a></li>
+          </ul>
+        </aside>
+      </div>
+      <div class="column">
+        <div class="box">
+          <h1 id="title" class="title"></h1>
+          <table class="table">
+            <tr>
+              <td><b>Final date: </b></td>
+              <td id="finalDate"></td>
+            </tr>
+            <tr>
+              <td><b>Address: </b></td>
+              <td id="address"></td>
+            </tr>
+            <tr>
+              <td><b>Type: </b></td>
+              <td id="type"></td>
+            </tr>
+          </table>
+          <div class="box">
+            <a href="mailto:proposals@letmefix.com" class="button is-success">
+              <span class="icon is-small">
+                <i class="fas fa-paper-plane"></i>
+              </span>
+              <span>Send proposal</span>
+            </a>
+            <a class="button is-success" id="startService">
+              <span class="icon is-small">
+                <i class="fas fa-play"></i>
+              </span>
+              <span>Start service</span>
+            </a>
+            <a class="button is-danger is-hidden" id="stopService">
+              <span class="icon is-small">
+                <i class="fas fa-spinner fa-pulse"></i>
+              </span>
+              <span>Stop service</span>
+            </a>
+          </div>
+          <br /><br />
+          <img id="photo" style="max-width:25%" src="" />
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/service.js"></script>
+</body>
+
+</html>
